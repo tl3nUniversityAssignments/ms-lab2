@@ -30,3 +30,22 @@ def greville(matrix):
 
     return inverse
 
+def moore_penrose(A):
+    delta = 10
+    m = A.shape[0]
+    n = A.shape[1]
+
+    E = np.identity(n)
+    if m < n:
+        E = np.identity(m)
+    
+    previous = multiply(A.T, np.linalg.inv(multiply(A, A.T) + delta * E))
+    while True:
+        delta /= 2
+        inverse = multiply(A.T, np.linalg.inv(multiply(A, A.T) + delta * E))
+        if find_norm(previous, inverse) < 1e-6:
+            return inverse
+        else:
+            previous = inverse
+        
+

@@ -17,3 +17,6 @@ def find_Z(A, inverse):
 
 def find_R(inverse):
     return multiply(inverse, inverse.T)
+
+def find_norm(m1, m2):
+    return np.sqrt(np.sum((m1 - m2) ** 2))
