@@ -16,6 +16,7 @@ def write_image(path, pixels):
     try:
         width = len(pixels[0])
         height = len(pixels)
+
         img = Image.new("L", (width, height))
         # Flatten the 2D list into 1D
         flat_pixels = [pixel for row in pixels for pixel in row]

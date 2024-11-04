@@ -43,7 +43,7 @@ def moore_penrose(A):
     while True:
         delta /= 2
         inverse = multiply(A.T, np.linalg.inv(multiply(A, A.T) + delta * E))
-        if find_norm(previous, inverse) < 1e-6:
+        if find_norm(previous, inverse) < 1e-10:
             return inverse
         else:
             previous = inverse
