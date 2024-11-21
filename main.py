@@ -3,8 +3,8 @@ import imageio as io
 import reverse
 from utils import *
 
-input = io.read_image("x1.bmp")
-output = io.read_image("y9.bmp")
+input = io.read_image('x1.bmp')
+output = io.read_image('y9.bmp')
 
 # calculate
 X = np.array(input)
